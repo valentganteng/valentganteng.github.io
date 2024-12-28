@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Judson&family=Quando&display=swap");
+
+:root {
+    --bg: #b8900fd2;
+    --text: #151515;
+    --yellow: #EDB74D;
+    --red: #EB6666;
+    --green: #6FB18A;
+}
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2em;
+    background-color: var(--bg);
+    font-family: "Recoleta";
+    padding: 1rem;
+}
+
+/* Responsive typography */
+h1 {
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-weight: normal;
+    margin: 0;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Typewriter effect */
+.typewriter h1 {
+    text-align: center;
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    margin-bottom: 20px;
+    font-size: clamp(1.5rem, 4vw, 2.5em);
+    width: 100%;
+    animation: typing 3.5s steps(30, end),
+               blink-caret .5s step-end infinite;
+}
+
+.typewriter p {
+    color: white;
+    font-family: monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .05em;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+/* Poem styles */
+.poem {
+    width: 100%;
+    max-width: 375px;
+    margin: auto;
+    padding: 0 1rem;
+    font-family: Baskerville;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.poem h1 {
+    font-size: clamp(1.75rem, 4vw, 2.125rem);
+    margin-bottom: 10px;
+}
+
+.poem h2 {
+    font-size: clamp(1rem, 3vw, 1.125rem);
+    margin-bottom: 20px;
+}
+
+/* Paragraphs and spans */
+p > span {
+    font-weight: 400;
+    font-style: italic;
+    display: block;
+    padding: 0.5em 1em;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+/* Page layout */
+.page {
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    body {
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .poem {
+        padding: 0 0.5rem;
+    }
+
+    p > span {
+        padding: 0.5em;
+    }
+
+    .page h1 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        margin: 0.5em 0;
+        grid-column: 1/-1;
+        text-align: center;
+    }
+
+    .page h2, .page h3 {
+        grid-column: 1/-1;
+        text-align: center;
+    }
+
+    .for-to {
+        text-align: center;
+    }
+
+    .for-to p, .for-to h3 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .typewriter h1 {
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+    }
+
+    .poem h2 + p:first-letter {
+        font-size: 30px;
+        margin: 8px 3px 0 0;
+    }
+}
+
+/* Animation keyframes */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}

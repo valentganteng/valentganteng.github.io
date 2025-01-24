@@ -36,6 +36,19 @@
     box-shadow: 0 0 0 0 var(--hover);
   }
 }
+
+.pulse3:hover,
+.pulse3:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes pulse3 {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
 .close:hover,
 .close:focus {
   box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
@@ -94,7 +107,7 @@
   --hover: rgb(102, 200, 134.5);
 }
 
-.offset {
+.pulse3 {
   --color: #19bc8b;
   --hover: rgb(25, 114.75, 188);
 }
